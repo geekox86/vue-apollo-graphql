@@ -40,7 +40,6 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.7.1",
     "jest-chain": "^1.1.2",
-    "jest-esnext": "^0.0.4",
     "jest-extended": "^0.11.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
