@@ -30,7 +30,7 @@
     "@types/webpack": "^4.4.26",
     "@types/webpack-dev-server": "^3.1.5",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "babel-jest": "24.7.1",
+    "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "cssnano": "^4.1.10",

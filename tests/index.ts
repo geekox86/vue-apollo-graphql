@@ -11,11 +11,13 @@ describe('Vue Apollo GraphQL Plugin', () => {
 
   it('should extend Vue prototype with $apollo', () => {
     const MockedVue = mocked(Vue, true)
-    
+
+    // @ts-ignore
     expect(MockedVue.prototype.$apollo).toBeUndefined()
     
     MockedVue.use(VueApolloGraphQLPlugin, [])
 
+    // @ts-ignore
     expect(MockedVue.prototype.$apollo).toBeDefined()
   })
 })
