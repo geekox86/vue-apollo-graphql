@@ -43,6 +43,5 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "tests/**/*.vue"
-  ],
-  "exclude": ["builds", "node_modules"]
+  ]
 }

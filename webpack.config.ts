@@ -13,7 +13,7 @@ const config = {
   entry: path.resolve(__dirname, 'codes', 'index.ts'),
   output: {
     path: path.resolve(__dirname, 'builds'),
-    filename: 'index.js',
+    filename: 'index.ts',
     libraryTarget: 'commonjs2'
   },
   externals: ['vue'],

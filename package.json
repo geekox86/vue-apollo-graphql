@@ -7,7 +7,7 @@
   "author": "Mohannad Al-Awad",
   "license": "MIT",
   "scripts": {
-    "test": "yarn jest",
+    "test": "yarn jest --watch",
     "debug": "",
     "build": "",
     "release": ""
@@ -25,12 +25,11 @@
     "@types/html-webpack-plugin": "^3.2.0",
     "@types/jest": "24.0.11",
     "@types/mini-css-extract-plugin": "^0.2.0",
-    "@types/node": "^11.13.0",
+    "@types/node": "^11.13.5",
     "@types/sass": "^1.16.0",
     "@types/webpack": "^4.4.26",
     "@types/webpack-dev-server": "^3.1.5",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "cssnano": "^4.1.10",
@@ -48,7 +47,7 @@
     "postcss-preset-env": "^6.6.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
-    "ts-jest": "24.0.2",
+    "ts-jest": "^24.0.2",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.3",
@@ -79,7 +78,7 @@
   "jest": {
     "testURL": "http://localhost:8080/",
     "testMatch": [
-      "<rootDir>/tests/**/*.(ts|tsx|vue)"
+      "<rootDir>/tests/**/*.(js|jsx|ts|tsx|vue)"
     ],
     "moduleFileExtensions": [
       "js",
@@ -93,7 +92,7 @@
       "^@/(.*)$": "<rootDir>/$1"
     },
     "transform": {
-      ".+\\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2|css|sass|scss)$": "jest-transform-stub",
+      "^.+\\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2|css|sass|scss)$": "jest-transform-stub",
       "^.+\\.(js|jsx)$": "babel-jest",
       "^.+\\.(ts|tsx)$": "ts-jest",
       "^.+\\.vue$": "vue-jest"
@@ -101,6 +100,7 @@
     "transformIgnorePatterns": [
       "/node_modules/"
     ],
+    "snapshotResolver": "<rootDir>/tests/snapshots/resolver.js",
     "snapshotSerializers": [
       "jest-serializer-vue"
     ],
@@ -108,13 +108,9 @@
       "jest-chain",
       "jest-extended"
     ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": {
-          "module": "commonjs"
-        },
-        "babelConfig": true
-      }
-    }
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text"
+    ]
   }
 }
