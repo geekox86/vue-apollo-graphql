@@ -9,12 +9,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "scripthost"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "scripthost"],
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
@@ -23,7 +18,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["jest"]
+    "types": ["jest", "node"]
   },
   "include": [
     "codes/**/*.ts",

@@ -21,7 +21,7 @@ const config = {
     extensions: ['.js', 'jsx', '.ts', '.tsx', '.vue'],
     alias: {
       '@': '.',
-      vue$: 'vue/dist/vue.runtime.esm.js'
+      'vue$': 'vue/dist/vue.runtime.esm.js'
     }
   },
   module: {
