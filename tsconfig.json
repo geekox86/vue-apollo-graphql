@@ -15,25 +15,15 @@
       "esnext",
       "scripthost"
     ],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "paths": {
       "@/*": ["./*"]
     },
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
-    "types": [
-      "clean-webpack-plugin",
-      "fibers",
-      "html-webpack-plugin",
-      "jest",
-      "mini-css-extract-plugin",
-      "node",
-      "sass",
-      "webpack",
-      "webpack-dev-server"
-    ]
+    "target": "esnext",
+    "types": ["jest"]
   },
   "include": [
     "codes/**/*.ts",

@@ -1,14 +1,14 @@
-import CleanWebpackPlugin from 'clean-webpack-plugin'
-import Fiber from 'fibers'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import path from 'path'
-import sass from 'sass'
-import { VueLoaderPlugin } from 'vue-loader'
-import { Configuration, HotModuleReplacementPlugin } from 'webpack'
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const Fiber = require('fibers')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const sass = require('sass')
+const VueLoaderPlugin = require('vue-loader').VueLoaderPlugin
+const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
 
 const config = {
-  mode: process.env.NODE_ENV != 'production' ? 'development' : 'production',
+  mode: process.env.NODE_ENV !== 'production' ? 'development' : 'production',
   context: path.resolve(__dirname),
   entry: path.resolve(__dirname, 'codes', 'index.ts'),
   output: {
@@ -45,7 +45,7 @@ const config = {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          process.env.NODE_ENV != 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -98,6 +98,6 @@ const config = {
     compress: true,
     hot: true
   }
-} as Configuration
+}
 
-export default config
+module.exports = config
