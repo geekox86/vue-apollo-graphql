@@ -8,11 +8,13 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn jest --watch",
-    "debug": "",
-    "build": "",
-    "release": ""
+    "debug": "yarn webpack-dev-server",
+    "build": "yarn webpack"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "core-js": "^3.0.1"
+  },
   "peerDependencies": {
     "apollo-client": "^2.5.1",
     "vue": "^2.6.10"
@@ -30,6 +32,7 @@
     "@types/webpack": "^4.4.26",
     "@types/webpack-dev-server": "^3.1.5",
     "@vue/test-utils": "^1.0.0-beta.29",
+    "apollo-client": "^2.5.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "cssnano": "^4.1.10",
@@ -51,6 +54,7 @@
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.4",
+    "vue": "^2.6.10",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
@@ -66,7 +70,12 @@
   ],
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage"
+        }
+      ]
     ]
   },
   "postcss": {
@@ -92,10 +101,10 @@
       "^@/(.*)$": "<rootDir>/$1"
     },
     "transform": {
-      "^.+\\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2|css|sass|scss)$": "jest-transform-stub",
       "^.+\\.(js|jsx)$": "babel-jest",
       "^.+\\.(ts|tsx)$": "ts-jest",
-      "^.+\\.vue$": "vue-jest"
+      "^.+\\.vue$": "vue-jest",
+      "^.+\\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2|css|sass|scss)$": "jest-transform-stub"
     },
     "transformIgnorePatterns": [
       "/node_modules/"

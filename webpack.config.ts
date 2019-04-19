@@ -66,16 +66,16 @@ const config = {
               implementation: sass,
               fiber: Fiber
             }
-          },
-          {
-            test: /\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$/,
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
           }
         ]
       },
+      {
+        test: /\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      }
     ]
   },
   plugins: [
@@ -85,8 +85,8 @@ const config = {
       filename: 'index.css'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'codes', 'index.htm'),
-      filename: 'index.htm'
+      template: path.resolve(__dirname, 'codes', 'index.html'),
+      filename: 'index.html'
     }),
     new HotModuleReplacementPlugin()
   ],
