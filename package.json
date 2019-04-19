@@ -45,12 +45,12 @@
     "mini-css-extract-plugin": "^0.6.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
-    "sass": "^1.18.0",
+    "sass": "^1.19.0",
     "sass-loader": "^7.1.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.3",
-    "typescript": "^3.4.3",
+    "typescript": "^3.4.4",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
@@ -111,6 +111,11 @@
     "collectCoverage": true,
     "coverageReporters": [
       "text"
-    ]
+    ],
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true
+      }
+    }
   }
 }
