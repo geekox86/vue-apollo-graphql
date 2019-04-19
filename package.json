@@ -12,11 +12,11 @@
     "build": "",
     "release": ""
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "apollo-client": "^2.5.1",
     "vue": "^2.6.10"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
