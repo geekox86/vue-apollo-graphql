@@ -7,6 +7,12 @@ const config = {
         useBuiltIns: 'usage'
       }
     ],
+    [
+      "babel-preset-proposals",
+      {
+        "all": true,
+      }
+    ],
     '@vue/jsx'
   ]
 }
