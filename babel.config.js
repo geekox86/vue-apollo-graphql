@@ -1,11 +1,13 @@
 const config = {
   presets: [
     [
-      '@babel/preset-env',
+      '@babel/env',
       {
+        corejs: '3',
         useBuiltIns: 'usage'
       }
-    ]
+    ],
+    '@vue/jsx'
   ]
 }
 

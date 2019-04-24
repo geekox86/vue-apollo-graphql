@@ -1,16 +1,14 @@
 const config = {
   testURL: 'http://localhost:8080/',
-  testMatch: ['<rootDir>/tests/**/*.(js|jsx|ts|tsx|vue)'],
-  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'vue'],
+  testMatch: ['<rootDir>/tests/**/*.(ts|tsx)'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1'
   },
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.vue$': 'vue-jest',
-    '^.+\\.(aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2|css|sass|scss)$':
-      'jest-transform-stub'
+    '^.+\\.(css|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$': 'jest-transform-stub'
   },
   transformIgnorePatterns: ['/node_modules/'],
   snapshotResolver: '<rootDir>/snapshot.config.js',
@@ -18,6 +16,10 @@ const config = {
   setupFilesAfterEnv: ['jest-chain', 'jest-extended'],
   collectCoverage: true,
   coverageReporters: ['text'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname'
+  ],
   globals: {
     'ts-jest': {
       tsConfig: {

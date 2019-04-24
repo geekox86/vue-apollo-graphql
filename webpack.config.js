@@ -1,10 +1,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const Fiber = require('fibers')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
-const sass = require('sass')
-const VueLoaderPlugin = require('vue-loader').VueLoaderPlugin
 const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
 
 const config = {
@@ -13,14 +10,14 @@ const config = {
   entry: path.resolve(__dirname, 'codes', 'index.ts'),
   output: {
     path: path.resolve(__dirname, 'builds'),
-    filename: 'index.ts',
+    filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
   externals: ['vue'],
   resolve: {
-    extensions: ['.js', 'jsx', '.ts', '.tsx', '.vue'],
+    extensions: ['.js', 'jsx', '.ts', '.tsx', '.json'],
     alias: {
-      '@': '.',
+      '@': path.resolve(__dirname),
       'vue$': 'vue/dist/vue.runtime.esm.js'
     }
   },
@@ -29,42 +26,28 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: (fileName) => /node_modules/.test(fileName) && !/\.vue\.js$/.test(fileName)
+        exclude: /node_modules/
       },
       {
         test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
-        options: {
-          appendTsSuffixTo: [/\.vue$/]
-        }
+        use: ['babel-loader', 'ts-loader'],
+        exclude: /node_modules/
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.(css|sass|scss)$/,
+        test: /\.css$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-              importLoaders: 2
+              importLoaders: 1,
+              sourceMap: true
             }
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              implementation: sass,
-              fiber: Fiber
             }
           }
         ]
@@ -80,7 +63,6 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'index.css'
     }),

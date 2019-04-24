@@ -9,24 +9,23 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "jsx": "preserve",
+    "jsxFactory": "Vue",
     "lib": ["dom", "dom.iterable", "esnext", "scripthost"],
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["*"]
     },
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "webpack-env"]
   },
   "include": [
     "codes/**/*.ts",
     "codes/**/*.tsx",
-    "codes/**/*.vue",
     "shims/**/*.ts",
     "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "tests/**/*.vue"
+    "tests/**/*.tsx"
   ]
 }
