@@ -22,10 +22,6 @@ const config = {
   ],
   globals: {
     'ts-jest': {
-      tsConfig: {
-        module: 'commonjs',
-        target: 'es5'
-      },
       babelConfig: true
     }
   }

@@ -30,8 +30,7 @@ const config = {
       },
       {
         test: /\.(ts|tsx)$/,
-        use: ['babel-loader', 'ts-loader'],
-        exclude: /node_modules/
+        use: ['babel-loader', 'ts-loader']
       },
       {
         test: /\.css$/,

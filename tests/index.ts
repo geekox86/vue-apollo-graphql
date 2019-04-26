@@ -8,11 +8,9 @@ beforeEach(() => {
 })
 
 test('VueApolloGraphQLPlugin should extend Vue.prototype with $apollo', () => {
-  // @ts-ignore
   expect(Vue.prototype.$apollo).toBeUndefined()
 
   VueApolloGraphQLPlugin(Vue, [])
 
-  // @ts-ignore
   expect(Vue.prototype.$apollo).toBeDefined()
 })
