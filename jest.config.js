@@ -8,9 +8,9 @@ const config = {
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.(css|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$': 'jest-transform-stub'
+    '^.+\\.(css|less|sass|scss|styl|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$': 'jest-transform-stub'
   },
-  transformIgnorePatterns: ['/node_modules/'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(vuetify)/)'],
   snapshotResolver: '<rootDir>/snapshot.config.js',
   snapshotSerializers: ['jest-serializer-vue'],
   setupFilesAfterEnv: ['jest-chain', 'jest-extended'],
