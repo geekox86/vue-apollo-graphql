@@ -10,7 +10,7 @@ const config = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
     '^.+\\.(css|less|sass|scss|styl|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$': 'jest-transform-stub'
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(vuetify)/)'],
+  transformIgnorePatterns: ['/node_modules/'],
   snapshotResolver: '<rootDir>/snapshot.config.js',
   snapshotSerializers: ['jest-serializer-vue'],
   setupFilesAfterEnv: ['jest-chain', 'jest-extended'],

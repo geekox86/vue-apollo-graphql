@@ -1,8 +1,6 @@
 import VueApolloGraphQLPlugin from '@/codes/index'
+import { mocked } from 'ts-jest/utils'
 import Vue from 'vue'
-import Vuetify from 'vuetify'
-
-Vue.use(Vuetify)
 
 jest.mock('vue')
 
@@ -11,9 +9,14 @@ beforeEach(() => {
 })
 
 test('VueApolloGraphQLPlugin should extend Vue.prototype with $apollo', () => {
-  expect(Vue.prototype.$apollo).toBeUndefined()
+  const MockedVue = mocked(Vue)
 
+  // @ts-ignore
+  expect(MockedVue.prototype.$apollo).toBeUndefined()
+
+  // todo: use MockedVue instead of Vue
   VueApolloGraphQLPlugin(Vue, [])
 
-  expect(Vue.prototype.$apollo).toBeDefined()
+  // @ts-ignore
+  expect(MockedVue.prototype.$apollo).toBeDefined()
 })

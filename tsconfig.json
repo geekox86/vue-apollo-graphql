@@ -19,13 +19,12 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["jest", "node", "vuetify", "webpack-env"]
+    "types": ["jest", "node", "vuetify", "webpack-env"],
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "shims/**/*.ts",
     "codes/**/*.ts",
-    "codes/**/*.tsx",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "codes/**/*.tsx"
   ]
 }
