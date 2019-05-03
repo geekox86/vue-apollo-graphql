@@ -18,7 +18,7 @@
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
-    "vuetify": "^1.5.13"
+    "vuetify": "^1.5.14"
   },
   "peerDependencies": {
     "apollo-client": "^2.5.1"
@@ -27,8 +27,8 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@fullhuman/postcss-purgecss": "^1.2.0",
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.8",
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.13.9",
     "@types/webpack-env": "^1.13.9",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
     "@vue/babel-preset-jsx": "^1.0.0-beta.3",
@@ -57,12 +57,13 @@
     "stylus-loader": "^3.0.2",
     "tailwindcss": "^1.0.0-beta.8",
     "ts-jest": "^24.0.2",
-    "ts-loader": "^5.4.4",
+    "ts-loader": "^5.4.5",
     "typescript": "^3.4.5",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "browserslist": [
     "> 1%",

@@ -3,17 +3,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
+const webpackNodeExternals = require('webpack-node-externals')
 
 const config = {
   mode: process.env.NODE_ENV !== 'production' ? 'development' : 'production',
   context: path.resolve(__dirname),
-  entry: path.resolve(__dirname, 'codes', 'index.ts'),
+  entry: [
+    path.resolve(__dirname, 'codes', 'index.ts'),
+    path.resolve(__dirname, 'codes', 'index.css')
+  ],
   output: {
     path: path.resolve(__dirname, 'builds'),
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
-  externals: ['vue'],
+  externals: [webpackNodeExternals()],
   resolve: {
     extensions: ['.js', 'jsx', '.ts', '.tsx', '.json'],
     alias: {
