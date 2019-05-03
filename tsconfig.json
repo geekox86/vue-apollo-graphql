@@ -23,8 +23,8 @@
     "typeRoots": ["node_modules/@types"]
   },
   "include": [
-    "shims/**/*.ts",
     "codes/**/*.ts",
-    "codes/**/*.tsx"
+    "codes/**/*.tsx",
+    "shims/**/*.ts"
   ]
 }
