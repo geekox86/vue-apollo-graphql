@@ -6,7 +6,7 @@ const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
 const webpackNodeExternals = require('webpack-node-externals')
 
 const config = {
-  mode: process.env.NODE_ENV !== 'production' ? 'development' : 'production',
+  mode: 'development',
   context: path.resolve(__dirname),
   entry: [
     path.resolve(__dirname, 'codes', 'index.ts'),

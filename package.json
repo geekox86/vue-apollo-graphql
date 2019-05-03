@@ -10,7 +10,7 @@
     "lint": "",
     "test": "yarn jest --watch --coverage",
     "debug": "yarn webpack-dev-server",
-    "build": "yarn webpack"
+    "build": "yarn webpack --mode production --progress"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
