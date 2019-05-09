@@ -28,11 +28,6 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.(ts|tsx)$/,
         use: ['babel-loader', 'ts-loader']
       },
