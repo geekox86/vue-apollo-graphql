@@ -7,7 +7,9 @@
   "author": "Mohannad Al-Awad",
   "license": "MIT",
   "scripts": {
-    "lint": "yarn eslint --config eslint.config.js --format codeframe --ext 'js, ts, tsx' .",
+    "lint": "yarn lint:scripts && yarn lint:styles",
+    "lint:scripts": "yarn eslint --config eslint.config.js --format codeframe --ext 'js, ts, tsx' .",
+    "lint:styles": "yarn stylelint .",
     "test": "yarn jest --watch --coverage",
     "debug": "yarn webpack-dev-server",
     "build": "yarn webpack --mode production --progress"
@@ -56,6 +58,8 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
     "style-loader": "^0.23.1",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "tailwindcss": "^1.0.0-beta.8",
