@@ -2,3 +2,5 @@
 assets
 builds
 node_modules
+
+**/*.json
