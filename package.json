@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "yarn --silent concurrently yarn:lint:scripts yarn:lint:styles",
-    "lint:scripts": "yarn --silent eslint --config eslint.config.js --cache --format codeframe --ext 'js, ts, tsx' . ; exit 0",
-    "lint:styles": "yarn --silent stylelint --cache . ; exit 0",
+    "lint:scripts": "yarn --silent eslint --config eslint.config.js --cache --format codeframe '**/*.{js,ts,tsx}' ; exit 0",
+    "lint:styles": "yarn --silent stylelint --cache --custom-formatter node_modules/stylelint-codeframe-formatter '**/*.css' ; exit 0",
     "test": "yarn --silent jest --watch --coverage",
     "debug": "yarn --silent webpack-dev-server",
     "build": "yarn --silent webpack --mode production --progress"
@@ -60,6 +60,7 @@
     "postcss-preset-env": "^6.6.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.0.1",
+    "stylelint-codeframe-formatter": "^1.0.4",
     "stylelint-config-standard": "^18.3.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
