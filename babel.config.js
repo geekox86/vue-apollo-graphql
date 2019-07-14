@@ -8,12 +8,20 @@ const config = {
       }
     ],
     [
-      "babel-preset-proposals",
+      'babel-preset-proposals',
       {
-        "all": true,
+        all: true,
       }
     ],
     '@vue/jsx'
+  ],
+  plugins: [
+    [
+      'babel-plugin-root-import',
+      {
+        rootPathPrefix: '@'
+      }
+    ]
   ]
 }
 

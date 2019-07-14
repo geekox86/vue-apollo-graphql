@@ -8,10 +8,10 @@ const config = {
   plugins: [
     postcssImport,
     tailwindcss,
-    postcssPurgecss({
-      content: ['./codes/**/*.tsx'],
-      defaultExtractor: (content) => content.match(/[\w\d-_:/]+/g) || []
-    }),
+    // postcssPurgecss({
+    //   content: ['./codes/**/*.tsx'],
+    //   defaultExtractor: (content) => content.match(/[\w\d-_:/]+/g) || []
+    // }),
     postcssPresetEnv,
     cssnano
   ]

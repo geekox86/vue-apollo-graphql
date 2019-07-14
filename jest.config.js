@@ -1,6 +1,6 @@
 const config = {
   testURL: 'http://localhost:8080/',
-  testMatch: ['<rootDir>/tests/**/*.(ts|tsx)'],
+  testMatch: ['<rootDir>/tests/**/*.{ts,tsx}'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1'

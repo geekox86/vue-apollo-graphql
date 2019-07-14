@@ -21,10 +21,8 @@
     "typeRoots": ["node_modules/@types"]
   },
   "include": [
-    "codes/**/*.ts",
-    "codes/**/*.tsx",
     "shims/**/*.ts",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "codes/**/*.{ts,tsx}",
+    "tests/**/*.{ts,tsx}"
   ]
 }
