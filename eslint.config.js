@@ -13,14 +13,18 @@ const config = {
   parserOptions: {
     project: 'tsconfig.json',
     sourceType: 'module',
-    ecmaVersion: 2019,
+    ecmaVersion: '2019',
     ecmaFeatures: {
       globalReturn: true,
       impliedStrict: true,
       jsx: true
     }
   },
-  plugins: ['@typescript-eslint']
+  plugins: ['@typescript-eslint'],
+  rules: {
+    'indent': ['error', 2],
+    '@typescript-eslint/indent': ['error', 2]
+  }
 }
 
 module.exports = config
