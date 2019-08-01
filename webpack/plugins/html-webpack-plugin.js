@@ -4,7 +4,7 @@ module.exports = (entry) => {
     const path = require('path')
 
     return new HtmlWebpackPlugin({
-      template: path.resolve(entry.root, 'codes', entry.html),
+      template: path.resolve(entry.root, entry.input, entry.html),
       filename: entry.filename.replace(/\.[^.]+$/, '.html')
     })
   }

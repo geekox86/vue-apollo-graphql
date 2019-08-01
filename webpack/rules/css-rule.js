@@ -12,7 +12,7 @@ module.exports = (entry) => {
         styleLoader(entry),
         vueStyleLoader(entry),
         miniCssExtractLoader(entry),
-        cssLoader(entry, 1),
+        cssLoader(entry, entry.postcss ? 1 : 0),
         postcssLoader(entry)
       ].filter((loader) => loader)
     }

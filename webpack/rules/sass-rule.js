@@ -1,21 +1,21 @@
 module.exports = (entry) => {
-  if (entry.stylus) {
+  if (entry.sass) {
     const styleLoader = require('../loaders/style-loader')
     const vueStyleLoader = require('../loaders/vue-style-loader')
     const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
     const cssLoader = require('../loaders/css-loader')
     const postcssLoader = require('../loaders/postcss-loader')
-    const stylusLoader = require('../loaders/stylus-loader')
+    const sassLoader = require('../loaders/sass-loader')
 
     return {
-      test: /\.styl(us)?$/,
+      test: /\.s(a|c)ss?$/,
       use: [
         styleLoader(entry),
         vueStyleLoader(entry),
         miniCssExtractLoader(entry),
         cssLoader(entry, entry.postcss ? 2 : 1),
         postcssLoader(entry),
-        stylusLoader(entry)
+        sassLoader(entry)
       ].filter((loader) => loader)
     }
   }

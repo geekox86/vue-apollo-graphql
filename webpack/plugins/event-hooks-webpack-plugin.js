@@ -9,7 +9,7 @@ module.exports = (entry) => {
       tap: 'tapPromise',
       task: async () => {
         const buildArtifactPaths = await fastGlob('*', {
-          cwd: path.resolve(entry.root, 'builds'),
+          cwd: path.resolve(entry.root, entry.output),
           absolute: true,
           onlyFiles: false,
           dot: true,
@@ -26,20 +26,20 @@ module.exports = (entry) => {
       task: async () => {
         if (entry.mode == 'production' && entry.modules) {
           const buildArtifactNames = await fastGlob('**', {
-            cwd: path.resolve(entry.root, 'builds', 'codes'),
+            cwd: path.resolve(entry.root, entry.output, entry.input),
             dot: true,
             followSymbolicLinks: false
           })
 
           for (const buildArtifactName of buildArtifactNames) {
             await fsExtra.move(
-              path.resolve(entry.root, 'builds', 'codes', buildArtifactName),
-              path.resolve(entry.root, 'builds', buildArtifactName),
+              path.resolve(entry.root, entry.output, entry.input, buildArtifactName),
+              path.resolve(entry.root, entry.output, buildArtifactName),
               { overwrite: true }
             )
           }
 
-          await fsExtra.remove(path.resolve(entry.root, 'builds/codes'))
+          await fsExtra.remove(path.resolve(entry.root, entry.output, entry.input))
         }
       }
     }

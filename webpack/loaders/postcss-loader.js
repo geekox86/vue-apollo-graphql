@@ -11,7 +11,7 @@ const postcssPurgecssPlugin = (entry) => {
     const postcssPurgecss = require('@fullhuman/postcss-purgecss')
 
     return postcssPurgecss({
-      content: ['./codes/**/*.tsx'],
+      content: [`./${ entry.input }/**/*.vue`],
       defaultExtractor: (content) => content.match(/[\w\d-_:/]+/g) || []
     })
   }

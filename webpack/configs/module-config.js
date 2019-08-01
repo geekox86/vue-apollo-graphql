@@ -3,6 +3,7 @@ module.exports = (entry) => {
   const tsRule = require('../rules/ts-rule')
   const vueRule = require('../rules/vue-rule')
   const cssRule = require('../rules/css-rule')
+  const sassRule = require('../rules/sass-rule')
   const stylusRule = require('../rules/stylus-rule')
   const assetsRule = require('../rules/assets-rule')
 
@@ -12,6 +13,7 @@ module.exports = (entry) => {
       tsRule(entry),
       vueRule(entry),
       cssRule(entry),
+      sassRule(entry),
       stylusRule(entry),
       assetsRule(entry)
     ].filter((rule) => rule)

@@ -5,6 +5,7 @@ module.exports = (entry) => {
   const eventHooksWebpackPlugin = require('../plugins/event-hooks-webpack-plugin')
   const htmlWebpackPlugin = require('../plugins/html-webpack-plugin')
   const vueLoaderPlugin = require('../plugins/vue-loader-plugin')
+  const vuetifyLoaderPlugin = require('../plugins/vuetify-loader-plugin')
   const miniCssExtractPlugin = require('../plugins/mini-css-extract-plugin')
 
   return [
@@ -14,6 +15,7 @@ module.exports = (entry) => {
     eventHooksWebpackPlugin(entry),
     htmlWebpackPlugin(entry),
     vueLoaderPlugin(entry),
+    vuetifyLoaderPlugin(entry),
     miniCssExtractPlugin(entry)
   ].filter((plugin) => plugin)
 }

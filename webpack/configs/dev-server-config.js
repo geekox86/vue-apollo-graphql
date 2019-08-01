@@ -4,7 +4,7 @@ module.exports = (entry) => {
 
     return {
       port: 8080,
-      contentBase: path.resolve(entry.root, 'builds'),
+      contentBase: path.resolve(entry.root, entry.output),
       watchContentBase: true,
       historyApiFallback: true,
       compress: true,

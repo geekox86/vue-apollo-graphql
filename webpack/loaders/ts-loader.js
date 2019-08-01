@@ -6,7 +6,7 @@ module.exports = (entry) => {
       ...(entry.mode == 'production' && entry.modules && {
         compilerOptions: {
           declaration: true,
-          declarationDir: 'builds'
+          declarationDir: entry.output
         }
       })
     }
