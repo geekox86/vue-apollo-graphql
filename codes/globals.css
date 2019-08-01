@@ -1,3 +1,3 @@
-@import 'tailwindcss/base';
+@import '@mdi/font/css/materialdesignicons';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

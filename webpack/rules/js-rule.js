@@ -1,6 +1,6 @@
 module.exports = (entry) => {
-  const emitFileLoader = require('../loaders/emit-file-loader')
   const babelLoader = require('../loaders/babel-loader')
+  const emitFileLoader = require('../loaders/emit-file-loader')
 
   const loaders = [
     emitFileLoader(entry),
@@ -11,7 +11,7 @@ module.exports = (entry) => {
     return {
       test: /\.js$/,
       use: loaders,
-      ...(entry.modules && { exclude: /node_modules/ })
+      exclude: /node_modules/
     }
   }
 }

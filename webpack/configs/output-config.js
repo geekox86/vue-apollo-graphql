@@ -3,7 +3,7 @@ module.exports = (entry) => {
 
   return {
     path: path.resolve(entry.root, entry.output),
-    publicPath: '.',
+    publicPath: './',
     filename: entry.filename.replace(/\.[^.]+$/, '.js'),
     ...(entry.modules && { libraryTarget: 'commonjs2' })
   }

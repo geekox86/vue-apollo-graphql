@@ -1,10 +1,11 @@
 module.exports = (entry) => {
   if (entry.css) {
+    const cssLoader = require('../loaders/css-loader')
+    const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
+    const postcssLoader = require('../loaders/postcss-loader')
+    const resolveUrlLoader = require('../loaders/resolve-url-loader')
     const styleLoader = require('../loaders/style-loader')
     const vueStyleLoader = require('../loaders/vue-style-loader')
-    const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
-    const cssLoader = require('../loaders/css-loader')
-    const postcssLoader = require('../loaders/postcss-loader')
 
     return {
       test: /\.css$/,
@@ -12,7 +13,8 @@ module.exports = (entry) => {
         styleLoader(entry),
         vueStyleLoader(entry),
         miniCssExtractLoader(entry),
-        cssLoader(entry, entry.postcss ? 1 : 0),
+        cssLoader(entry, entry.postcss ? 2 : 1),
+        resolveUrlLoader(entry),
         postcssLoader(entry)
       ].filter((loader) => loader)
     }
