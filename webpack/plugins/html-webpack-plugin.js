@@ -5,7 +5,7 @@ module.exports = (entry) => {
 
     return new HtmlWebpackPlugin({
       template: path.resolve(entry.root, entry.input, entry.html),
-      filename: entry.filename.replace(/\.[^.]+$/, '.html')
+      filename: entry.filename.replace(/\.[^.]+$/, '.[contenthash:8].html')
     })
   }
 }
