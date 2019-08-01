@@ -1,6 +1,7 @@
 module.exports = (entry) => {
   const caseSensitivePathsWebpackPlugin = require('../plugins/case-sensitive-paths-webpack-plugin')
   const eventHooksWebpackPlugin = require('../plugins/event-hooks-webpack-plugin')
+  const fontAwesomeMinifyPlugin = require('../plugins/font-awesome-minify-plugin')
   const friendlyErrorsWebpackPlugin = require('../plugins/friendly-errors-webpack-plugin')
   const htmlWebpackPlugin = require('../plugins/html-webpack-plugin')
   const miniCssExtractPlugin = require('../plugins/mini-css-extract-plugin')
@@ -16,6 +17,7 @@ module.exports = (entry) => {
     htmlWebpackPlugin(entry),
     vueLoaderPlugin(entry),
     vuetifyLoaderPlugin(entry),
-    miniCssExtractPlugin(entry)
+    miniCssExtractPlugin(entry),
+    fontAwesomeMinifyPlugin(entry)
   ].filter((plugin) => plugin)
 }

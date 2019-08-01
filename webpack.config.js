@@ -20,6 +20,7 @@ const entries = [
     sass: true,
     stylus: false,
     extractCss: true,
+    minifyFa: false,
     assets: /\.(json|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$/,
     dev: 'server' // 'watch'
   }
