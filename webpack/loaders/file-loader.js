@@ -1,8 +1,9 @@
-module.exports = () => {
+module.exports = (entry) => {
   return {
     loader: 'file-loader',
     options: {
-      name: '[path][name].[ext]'
+      outputPath: entry.outputAssets,
+      name: '[name].[contenthash:8].[ext]'
     }
   }
 }

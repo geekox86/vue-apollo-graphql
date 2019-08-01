@@ -3,6 +3,7 @@ const toConfig = require('./webpack')
 const root = __dirname
 const input = 'codes'
 const output = 'builds'
+const outputAssets = 'assets'
 const entries = [
   {
     filename: 'client.ts',
@@ -32,6 +33,7 @@ module.exports = (_, { mode }) => {
     root,
     input,
     output,
+    outputAssets,
     ...entry
   }))
 }
