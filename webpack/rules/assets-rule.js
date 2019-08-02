@@ -4,8 +4,8 @@ module.exports = (entry) => {
   if (entry.assets) {
     return {
       test: (filename) => {
-        for (const exts of Object.values(entry.assets)) {
-          if (exts.test(filename)) {
+        for (const matcher of Object.values(entry.assets)) {
+          if (matcher.test(filename)) {
             return true
           }
         }

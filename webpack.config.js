@@ -2,11 +2,11 @@ const toConfig = require('./webpack')
 
 const root = __dirname
 const input = 'codes'
-const output = 'builds'
+const output = 'builds/client'
 const assets = {
   data: /\.json$/,
-  fonts: /\.(eot|otf|ttf|woff|woff2)$/,
-  images: /\.(gif|jpg|jpeg|png|svg)$/,
+  fonts: /\.(eot|otf|ttf|woff|woff2|svg)$/,
+  images: /\.(gif|jpg|jpeg|png)$/,
   audio: /\.(aac|m4a|mp3|oga|wav|webm)$/,
   video: /\.mp4$/
 }

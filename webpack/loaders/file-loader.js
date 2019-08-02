@@ -2,9 +2,9 @@ module.exports = (entry) => {
   return {
     loader: 'file-loader',
     options: {
-      outputPath: (filename) => {
-        for (const [asset, exts] of Object.entries(entry.assets)) {
-          if (exts.test(filename)) {
+      outputPath: (filename, path) => {
+        for (const [asset, matcher] of Object.entries(entry.assets)) {
+          if (matcher.test(path)) {
             return `${ asset }/${ filename }`
           }
         }
