@@ -3,7 +3,13 @@ const toConfig = require('./webpack')
 const root = __dirname
 const input = 'codes'
 const output = 'builds'
-const outputAssets = 'assets'
+const assets = {
+  data: /\.json$/,
+  fonts: /\.(eot|otf|ttf|woff|woff2)$/,
+  images: /\.(gif|jpg|jpeg|png|svg)$/,
+  audio: /\.(aac|m4a|mp3|oga|wav|webm)$/,
+  video: /\.mp4$/
+}
 const entries = [
   {
     filename: 'client.ts',
@@ -22,7 +28,6 @@ const entries = [
     stylus: false,
     extractCss: true,
     minifyFa: true,
-    assets: /\.(json|aac|m4a|mp3|mp4|oga|wav|webm|gif|jpg|jpeg|png|svg|eot|otf|ttf|woff|woff2)$/,
     dev: 'server' // 'watch'
   }
 ]
@@ -33,7 +38,7 @@ module.exports = (_, { mode }) => {
     root,
     input,
     output,
-    outputAssets,
+    assets,
     ...entry
   }))
 }

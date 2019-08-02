@@ -3,7 +3,13 @@ module.exports = (entry) => {
 
   if (entry.assets) {
     return {
-      test: entry.assets,
+      test: (filename) => {
+        for (const exts of Object.values(entry.assets)) {
+          if (exts.test(filename)) {
+            return true
+          }
+        }
+      },
       use: fileLoader(entry)
     }
   }
