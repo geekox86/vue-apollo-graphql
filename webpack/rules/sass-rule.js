@@ -3,7 +3,6 @@ module.exports = (entry) => {
     const cssLoader = require('../loaders/css-loader')
     const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
     const postcssLoader = require('../loaders/postcss-loader')
-    const resolveUrlLoader = require('../loaders/resolve-url-loader')
     const sassLoader = require('../loaders/sass-loader')
     const styleLoader = require('../loaders/style-loader')
     const vueStyleLoader = require('../loaders/vue-style-loader')
@@ -15,7 +14,6 @@ module.exports = (entry) => {
         vueStyleLoader(entry),
         miniCssExtractLoader(entry),
         cssLoader(entry, entry.postcss ? 3 : 2),
-        resolveUrlLoader(entry),
         postcssLoader(entry),
         sassLoader(entry)
       ].filter((loader) => loader)

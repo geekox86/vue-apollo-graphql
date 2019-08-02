@@ -10,7 +10,6 @@ module.exports = (entry) => {
 
   return {
     extensions: exts,
-    alias: { '@': entry.root },
-    modules: [require('path').resolve(entry.root, 'node_modules')]
+    alias: { '@': entry.root }
   }
 }

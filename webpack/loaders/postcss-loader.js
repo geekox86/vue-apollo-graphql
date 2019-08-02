@@ -1,7 +1,3 @@
-const postcssImportPlugin = () => {
-  return require('postcss-import')
-}
-
 const tailwindcssPlugin = () => {
   return require('tailwindcss')
 }
@@ -37,7 +33,6 @@ module.exports = (entry) => {
       loader: 'postcss-loader',
       options: {
         plugins: [
-          postcssImportPlugin(entry),
           tailwindcssPlugin(entry),
           postcssPurgecssPlugin(entry),
           postcssPresetEnvPlugin(entry),
