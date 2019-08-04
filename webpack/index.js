@@ -13,17 +13,17 @@ module.exports = (entry) => {
   const watchConfig = require('./configs/watch-config')
 
   return {
-    context: contextConfig(entry),
+    ...{ context: contextConfig(entry) },
     entry: entryConfig(entry),
-    target: targetConfig(entry),
+    ...{ target: targetConfig(entry) },
     output: outputConfig(entry),
-    externals: externalsConfig(entry),
+    ...{ externals: externalsConfig(entry) },
     resolve: resolveConfig(entry),
     module: moduleConfig(entry),
     plugins: pluginsConfig(entry),
-    devtool: devtoolConfig(entry),
-    devServer: devServerConfig(entry),
-    watch: watchConfig(entry),
+    ...{ devtool: devtoolConfig(entry) },
+    ...{ devServer: devServerConfig(entry) },
+    ...{ watch: watchConfig(entry) },
     stats: statsConfig(entry)
   }
 }

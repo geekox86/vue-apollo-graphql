@@ -29,11 +29,16 @@ const entries = [
     stylus: false,
     extractCss: 'chunk', // 'entry'
     minifyFa: true,
+    cache: true,
     dev: 'server' // 'watch'
   }
 ]
 
 module.exports = (_, { mode }) => {
+  if (!mode) {
+    mode = 'development'
+  }
+
   return entries.map((entry) => toConfig({
     mode,
     root,

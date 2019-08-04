@@ -1,5 +1,5 @@
 module.exports = (entry) => {
-  if (entry.minifyFa) {
+  if (entry.mode == 'production' && entry.minifyFa) {
     const FontAwesomeMinifyPlugin = require('font-awesome-minify-plugin')
     const path = require('path')
 

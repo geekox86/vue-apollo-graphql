@@ -1,6 +1,8 @@
-module.exports = () => {
-  return {
-    loader: 'cache-loader',
-    options: { cacheDirectory: '.cache' }
+module.exports = (entry) => {
+  if (entry.cache) {
+    return {
+      loader: 'cache-loader',
+      options: {cacheDirectory: '.cache'}
+    }
   }
 }
