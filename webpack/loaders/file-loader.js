@@ -1,4 +1,6 @@
 module.exports = (entry) => {
+  const hash = (entry.mode == 'production' && entry.hash) ? '.[contenthash:8]' : ''
+
   return {
     loader: 'file-loader',
     options: {
@@ -9,7 +11,7 @@ module.exports = (entry) => {
           }
         }
       },
-      name: '[name].[contenthash:8].[ext]'
+      name: `[name]${ hash }.[ext]`
     }
   }
 }

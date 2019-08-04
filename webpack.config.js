@@ -29,6 +29,7 @@ const entries = [
     stylus: false,
     extractCss: 'chunk', // 'entry'
     minifyFa: true,
+    hash: true,
     cache: true,
     dev: 'server' // 'watch'
   }

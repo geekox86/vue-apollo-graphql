@@ -8,7 +8,7 @@ module.exports = (entry) => {
       use: [
         cacheLoader(entry),
         vueLoader(entry)
-      ]
+      ].filter((loader) => loader)
     }
   }
 }
