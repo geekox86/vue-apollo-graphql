@@ -1,4 +1,5 @@
 module.exports = (entry) => {
+  const cacheLoader = require('../loaders/cache-loader')
   const fileLoader = require('../loaders/file-loader')
 
   if (entry.assets) {
@@ -10,7 +11,10 @@ module.exports = (entry) => {
           }
         }
       },
-      use: fileLoader(entry)
+      use: [
+        cacheLoader(entry),
+        fileLoader(entry)
+      ]
     }
   }
 }

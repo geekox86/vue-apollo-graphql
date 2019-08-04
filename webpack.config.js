@@ -2,7 +2,7 @@ const toConfig = require('./webpack')
 
 const root = __dirname
 const input = 'codes'
-const output = 'builds/client'
+const output = 'builds'
 const assets = {
   data: /\.json$/,
   fonts: /\.(eot|otf|ttf|woff|woff2|svg)$/,
@@ -25,8 +25,9 @@ const entries = [
     css: 'globals.css',
     postcss: true,
     sass: true,
+    less: false,
     stylus: false,
-    extractCss: true,
+    extractCss: 'chunk', // 'entry'
     minifyFa: true,
     dev: 'server' // 'watch'
   }

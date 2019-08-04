@@ -1,17 +1,17 @@
-const contextConfig = require('./configs/context-config')
-const devServerConfig = require('./configs/dev-server-config')
-const devtoolConfig = require('./configs/devtool-config')
-const entryConfig = require('./configs/entry-config')
-const externalsConfig = require('./configs/externals-config')
-const moduleConfig = require('./configs/module-config')
-const outputConfig = require('./configs/output-config')
-const pluginsConfig = require('./configs/plugins-config')
-const resolveConfig = require('./configs/resolve-config')
-const statsConfig = require('./configs/stats-config')
-const targetConfig = require('./configs/target-config')
-const watchConfig = require('./configs/watch-config')
-
 module.exports = (entry) => {
+  const contextConfig = require('./configs/context-config')
+  const devServerConfig = require('./configs/dev-server-config')
+  const devtoolConfig = require('./configs/devtool-config')
+  const entryConfig = require('./configs/entry-config')
+  const externalsConfig = require('./configs/externals-config')
+  const moduleConfig = require('./configs/module-config')
+  const outputConfig = require('./configs/output-config')
+  const pluginsConfig = require('./configs/plugins-config')
+  const resolveConfig = require('./configs/resolve-config')
+  const statsConfig = require('./configs/stats-config')
+  const targetConfig = require('./configs/target-config')
+  const watchConfig = require('./configs/watch-config')
+
   return {
     context: contextConfig(entry),
     entry: entryConfig(entry),
