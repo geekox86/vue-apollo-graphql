@@ -12,8 +12,8 @@ module.exports = (entry) => {
         }
       },
       use: [
-        cacheLoader(entry),
-        fileLoader(entry)
+        fileLoader(entry),
+        cacheLoader(entry)
       ].filter((loader) => loader)
     }
   }

@@ -4,8 +4,8 @@ module.exports = (entry) => {
   const emitFileLoader = require('../loaders/emit-file-loader')
 
   const loaders = [
-    cacheLoader(entry),
     emitFileLoader(entry),
+    cacheLoader(entry),
     babelLoader(entry)
   ].filter((loader) => loader)
 

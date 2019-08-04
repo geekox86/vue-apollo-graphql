@@ -8,8 +8,8 @@ module.exports = (entry) => {
     return {
       test: /\.ts$/,
       use: [
-        cacheLoader(entry),
         emitFileLoader(entry),
+        cacheLoader(entry),
         babelLoader(entry),
         tsLoader(entry)
       ].filter((loader) => loader),
