@@ -17,6 +17,7 @@ const entries = [
     engines: 'last 1 versions',
     modules: false,
     externals: false,
+    // node: {},
     html: 'template.html',
     babel: true,
     typescript: true,
@@ -31,7 +32,11 @@ const entries = [
     minifyFa: true,
     hash: true,
     cache: true,
+    // optimization: {},
+    // performance: {},
     dev: 'server' // 'watch'
+    // watchOptions: {},
+    // miscOptions: {}
   }
 ]
 

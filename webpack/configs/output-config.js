@@ -7,6 +7,7 @@ module.exports = (entry) => {
     path: path.resolve(entry.root, entry.output),
     publicPath: './',
     filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.js`),
+    chunkFilename: entry.filename.replace(/\.[^.]+$/, `[name]${ hash }.js`),
     ...(entry.modules && { libraryTarget: 'commonjs2' })
   }
 }
