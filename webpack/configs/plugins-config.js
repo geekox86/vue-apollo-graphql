@@ -9,12 +9,14 @@ module.exports = (entry) => {
   const vueLoaderPlugin = require('../plugins/vue-loader-plugin')
   const vuetifyLoaderPlugin = require('../plugins/vuetify-loader-plugin')
   const webpackBarPlugin = require('../plugins/webpack-bar-plugin')
+  const webpackBundleAnalyzerPlugin = require('../plugins/webpack-bundle-analyzer-plugin')
 
   return [
     caseSensitivePathsWebpackPlugin(entry),
     friendlyErrorsWebpackPlugin(entry),
     webpackBarPlugin(entry),
     eventHooksWebpackPlugin(entry),
+    webpackBundleAnalyzerPlugin(entry),
     htmlWebpackPlugin(entry),
     vueLoaderPlugin(entry),
     vuetifyLoaderPlugin(entry),

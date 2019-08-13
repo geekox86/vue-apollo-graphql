@@ -1,9 +1,9 @@
 module.exports = (entry) => {
   if (entry.mode == 'production' && entry.extractCss == 'chunk') {
-    const ExtractCssChunksWebpackPlugin = require('extract-css-chunks-webpack-plugin')
+    const { loader: ExtractCssChunksWebpackLoader } = require('extract-css-chunks-webpack-plugin')
 
     return {
-      loader: ExtractCssChunksWebpackPlugin.loader,
+      loader: ExtractCssChunksWebpackLoader,
       options: {
         hot: true,
         reloadAll: true

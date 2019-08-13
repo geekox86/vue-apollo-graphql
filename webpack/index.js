@@ -34,6 +34,6 @@ module.exports = (entry) => {
     ...{ watch: watchConfig(entry) },
     ...{ watchOptions: watchOptionsConfig(entry) },
     stats: statsConfig(entry),
-    ...{ miscOptions: miscOptionsConfig(entry) }
+    ...miscOptionsConfig(entry)
   }
 }

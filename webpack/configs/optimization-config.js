@@ -1,5 +1,5 @@
 module.exports = (entry) => {
   if (entry.mode == 'production') {
-    return {}
+    return { splitChunks: { chunks: 'all' } }
   }
 }
