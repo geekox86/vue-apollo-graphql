@@ -22,7 +22,8 @@
   },
   "include": [
     "shims/**/*.ts",
-    "codes/**/*.{ts,tsx}",
-    "tests/**/*.{ts,tsx}"
+    "tests/**/*.ts",
+    "codes/**/*.ts",
+    "codes/**/*.vue"
   ]
 }
