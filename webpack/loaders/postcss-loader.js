@@ -1,40 +1,35 @@
-const tailwindcssPlugin = () => {
-  return require('tailwindcss')
-}
-
-const postcssPurgecssPlugin = (entry) => {
-  if (entry.mode == 'production') {
-    const postcssPurgecss = require('@fullhuman/postcss-purgecss')
-
-    return postcssPurgecss({
-      content: [`./${ entry.input }/**/*.vue`],
-      defaultExtractor: (content) => content.match(/[\w\d-_:/]+/g) || []
-    })
-  }
-}
-
-const postcssPresetEnvPlugin = (entry) => {
-  if (entry.mode == 'production') {
-    const postcssPresetEnv = require('postcss-preset-env')
-
-    return postcssPresetEnv({ browsers: entry.engines })
-  }
-}
-
-const cssnanoPlugin = (entry) => {
-  if (entry.mode == 'production') {
-    return require('cssnano')
-  }
-}
-
 module.exports = (entry) => {
   if (entry.postcss) {
+    const cssnanoPlugin = (entry) => {
+      if (entry.mode == 'production' && entry.minify) {
+        return require('cssnano')
+      }
+    }
+
+    const tailwindcssPlugin = () => {
+      return require('tailwindcss')
+    }
+
+    const postcssImportPlugin = (entry) => {
+      const postcssImport = require('postcss-import')
+
+      return postcssImport({ root: entry.root })
+    }
+
+    const postcssPresetEnvPlugin = (entry) => {
+      if (entry.mode == 'production') {
+        const postcssPresetEnv = require('postcss-preset-env')
+
+        return postcssPresetEnv({ browsers: entry.engines })
+      }
+    }
+
     return {
       loader: 'postcss-loader',
       options: {
         plugins: [
+          postcssImportPlugin(entry),
           tailwindcssPlugin(entry),
-          postcssPurgecssPlugin(entry),
           postcssPresetEnvPlugin(entry),
           cssnanoPlugin(entry)
         ].filter((plugin) => plugin),

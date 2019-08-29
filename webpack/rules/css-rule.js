@@ -5,18 +5,20 @@ module.exports = (entry) => {
     const extractCssChunksWebpackLoader = require('../loaders/extract-css-chunks-webpack-loader')
     const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
     const postcssLoader = require('../loaders/postcss-loader')
+    const resolveUrlLoader = require('../loaders/resolve-url-loader')
     const styleLoader = require('../loaders/style-loader')
     const vueStyleLoader = require('../loaders/vue-style-loader')
 
     return {
       test: /\.css$/,
       use: [
-        styleLoader(entry),
-        vueStyleLoader(entry),
         miniCssExtractLoader(entry),
         extractCssChunksWebpackLoader(entry),
         cacheLoader(entry),
+        styleLoader(entry),
+        vueStyleLoader(entry),
         cssLoader(entry, entry.postcss ? 2 : 1),
+        resolveUrlLoader(entry),
         postcssLoader(entry)
       ].filter((loader) => loader)
     }

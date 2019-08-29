@@ -1,5 +1,5 @@
 module.exports = (entry) => {
-  const assetsRule = require('../rules/assets-rule')
+  const assetRule = require('../rules/asset-rule')
   const cssRule = require('../rules/css-rule')
   const jsRule = require('../rules/js-rule')
   const sassRule = require('../rules/sass-rule')
@@ -17,7 +17,7 @@ module.exports = (entry) => {
       sassRule(entry),
       lessRule(entry),
       stylusRule(entry),
-      assetsRule(entry)
+      assetRule(entry)
     ].filter((rule) => rule)
   }
 }

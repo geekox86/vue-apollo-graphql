@@ -21,6 +21,8 @@
     "typeRoots": ["node_modules/@types"]
   },
   "include": [
+    "*.js",
+    "webpack/**/*.js",
     "shims/**/*.ts",
     "tests/**/*.ts",
     "codes/**/*.ts",

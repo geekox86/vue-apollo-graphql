@@ -4,6 +4,9 @@ module.exports = (entry) => {
 
     const hash = (entry.mode == 'production' && entry.hash) ? '.[contenthash:8]' : ''
 
-    return new MiniCssExtractPlugin({ filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.css`) })
+    return new MiniCssExtractPlugin({
+      filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.css`),
+      chunkFilename: entry.filename.replace(/\.[^.]+$/, `.[name]${ hash }.css`)
+    })
   }
 }

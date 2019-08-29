@@ -23,17 +23,18 @@ const entries = [
     typescript: true,
     vue: true,
     vuetify: true,
-    css: 'globals.css',
+    css: true, // 'globals.css',
     postcss: true,
     sass: true,
     less: false,
     stylus: false,
-    extractCss: 'chunk', // 'entry'
-    minifyFa: true,
+    extractCss: 'entry', // 'chunk', // 'entry',
+    minify: true,
     hash: true,
-    cache: true,
+    cache: false,
     // optimization: {},
     // performance: {},
+    // stats: {},
     dev: 'server' // 'watch'
     // watchOptions: {},
     // miscOptions: {}

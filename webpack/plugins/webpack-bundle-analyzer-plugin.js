@@ -1,7 +1,8 @@
 module.exports = (entry) => {
-  if (entry.mode == 'production') {
-    const {BundleAnalyzerPlugin: WebpackBundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+  const { BundleAnalyzerPlugin: WebpackBundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-    return new WebpackBundleAnalyzerPlugin({ openAnalyzer: false })
-  }
+  return new WebpackBundleAnalyzerPlugin({
+    openAnalyzer: false,
+    generateStatsFile: true
+  })
 }

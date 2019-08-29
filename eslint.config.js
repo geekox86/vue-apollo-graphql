@@ -1,5 +1,9 @@
 const config = {
-  extends: ['plugin:@typescript-eslint/recommended', 'eslint:recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
   root: true,
   env: {
     browser: true,
@@ -18,7 +22,8 @@ const config = {
       globalReturn: true,
       impliedStrict: true,
       jsx: true
-    }
+    },
+    extraFileExtensions: ['.vue']
   },
   plugins: ['@typescript-eslint'],
   rules: {

@@ -4,9 +4,10 @@ module.exports = (entry) => {
   if (entry.typescript) {
     exts.splice(-1, 0, '.ts')
   }
-  if (entry.vue) {
-    exts.splice(-1, 0, '.vue')
-  }
+  // todo: check if this can be used
+  // if (entry.vue) {
+  //   exts.splice(-1, 0, '.vue')
+  // }
 
   return {
     extensions: exts,

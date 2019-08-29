@@ -7,7 +7,8 @@ module.exports = (entry) => {
 
     return new HtmlWebpackPlugin({
       template: path.resolve(entry.root, entry.input, entry.html),
-      filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.html`)
+      filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.html`),
+      minify: entry.minify || false
     })
   }
 }

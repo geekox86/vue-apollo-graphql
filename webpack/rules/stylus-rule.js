@@ -5,6 +5,7 @@ module.exports = (entry) => {
     const miniCssExtractLoader = require('../loaders/mini-css-extract-loader')
     const extractCssChunksWebpackLoader = require('../loaders/extract-css-chunks-webpack-loader')
     const postcssLoader = require('../loaders/postcss-loader')
+    const resolveUrlLoader = require('../loaders/resolve-url-loader')
     const styleLoader = require('../loaders/style-loader')
     const stylusLoader = require('../loaders/stylus-loader')
     const vueStyleLoader = require('../loaders/vue-style-loader')
@@ -12,12 +13,13 @@ module.exports = (entry) => {
     return {
       test: /\.styl(us)?$/,
       use: [
-        styleLoader(entry),
-        vueStyleLoader(entry),
         miniCssExtractLoader(entry),
         extractCssChunksWebpackLoader(entry),
         cacheLoader(entry),
-        cssLoader(entry, entry.postcss ? 2 : 1),
+        styleLoader(entry),
+        vueStyleLoader(entry),
+        cssLoader(entry, entry.postcss ? 3 : 2),
+        resolveUrlLoader(entry),
         postcssLoader(entry),
         stylusLoader(entry)
       ].filter((loader) => loader)

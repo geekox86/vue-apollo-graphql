@@ -6,7 +6,7 @@ module.exports = (entry) => {
 
     return new ExtractCssChunksWebpackPlugin({
       filename: entry.filename.replace(/\.[^.]+$/, `${ hash }.css`),
-      chunkFilename: entry.filename.replace(/\.[^.]+$/, `[name]${ hash }.css`),
+      chunkFilename: entry.filename.replace(/\.[^.]+$/, `.[name]${ hash }.css`)
     })
   }
 }
