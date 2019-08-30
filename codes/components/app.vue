@@ -9,9 +9,9 @@
   import helper from '@/codes/helper'
 
   export default Vue.component('App', {
-      data: {
+      data: () => ({
           test: helper
-      }
+      })
   })
 </script>
 

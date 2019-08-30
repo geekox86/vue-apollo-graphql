@@ -19,5 +19,4 @@ import('@/codes/components/app.vue')
 
 import('@/codes/components/app2.vue')
   .then(({ default: App2 }) => {
-    console.log(App2)
   })

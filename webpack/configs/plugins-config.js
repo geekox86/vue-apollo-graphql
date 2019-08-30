@@ -7,7 +7,7 @@ module.exports = (entry) => {
   const friendlyErrorsWebpackPlugin = require('../plugins/friendly-errors-webpack-plugin')
   const htmlWebpackPlugin = require('../plugins/html-webpack-plugin')
   const miniCssExtractPlugin = require('../plugins/mini-css-extract-plugin')
-  const purgecssWebpackPlugin = require('../plugins/purgecss-webpack-plugin')
+  const postcssWebpackPlugin = require('../plugins/postcss-webpack-plugin')
   const vueLoaderPlugin = require('../plugins/vue-loader-plugin')
   const vuetifyLoaderPlugin = require('../plugins/vuetify-loader-plugin')
   const webpackBarPlugin = require('../plugins/webpack-bar-plugin')
@@ -25,7 +25,7 @@ module.exports = (entry) => {
     vuetifyLoaderPlugin(entry),
     miniCssExtractPlugin(entry),
     extractCssChunksWebpackPlugin(entry),
-    purgecssWebpackPlugin(entry),
-    fontAwesomeMinifyPlugin(entry)
+    fontAwesomeMinifyPlugin(entry),
+    postcssWebpackPlugin(entry)
   ].filter((plugin) => plugin)
 }

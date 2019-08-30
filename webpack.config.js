@@ -31,7 +31,7 @@ const entries = [
     extractCss: 'entry', // 'chunk', // 'entry',
     minify: true,
     hash: true,
-    cache: false,
+    cache: true,
     // optimization: {},
     // performance: {},
     // stats: {},
