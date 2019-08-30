@@ -9,7 +9,7 @@ module.exports = (entry) => {
         minChunks: 1,
         minSize: 0,
         maxSize: Infinity,
-        maxInitialRequests: Infinity,
+        maxInitialRequests: Infinity, // todo: fix when maxInitialRequests equals 1
         maxAsyncRequests: Infinity,
         cacheGroups: {
           vendor: {

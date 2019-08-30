@@ -67,6 +67,7 @@ module.exports = (entry) => {
               }
             })
 
+            // todo: check correctness of generated sourcemaps and hashes
             compilation.assets[dependency] = new SourceMapSource(processedCss.css, dependency, processedCss.map)
           }
         })

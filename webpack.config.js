@@ -31,11 +31,11 @@ const entries = [
     extractCss: 'entry', // 'chunk', // 'entry',
     minify: true,
     hash: true,
-    cache: true,
+    cache: false,
     // optimization: {},
     // performance: {},
     // stats: {},
-    dev: 'server' // 'watch'
+    dev: 'server' // 'watch',
     // watchOptions: {},
     // miscOptions: {}
   }

@@ -1,5 +1,6 @@
 module.exports = (entry) => {
   const caseSensitivePathsWebpackPlugin = require('../plugins/case-sensitive-paths-webpack-plugin')
+  const cpuProfileWebpackPlugin = require('../plugins/cpuprofile-webpack-plugin')
   const eventHooksWebpackPlugin = require('../plugins/event-hooks-webpack-plugin')
   const extractCssChunksWebpackPlugin = require('../plugins/extract-css-chunks-webpack-plugin')
   const fontAwesomeMinifyPlugin = require('../plugins/font-awesome-minify-plugin')
@@ -14,6 +15,7 @@ module.exports = (entry) => {
   const webpackBundleAnalyzerPlugin = require('../plugins/webpack-bundle-analyzer-plugin')
 
   return [
+    cpuProfileWebpackPlugin(entry),
     caseSensitivePathsWebpackPlugin(entry),
     friendlyErrorsWebpackPlugin(entry),
     webpackBarPlugin(entry),
