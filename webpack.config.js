@@ -35,9 +35,9 @@ const entries = [
     // optimization: {},
     // performance: {},
     // stats: {},
-    dev: 'server' // 'watch',
+    dev: 'server', // 'watch',
     // watchOptions: {},
-    // miscOptions: {}
+    miscOptions: { profile: true }
   }
 ]
 

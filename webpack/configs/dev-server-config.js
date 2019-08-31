@@ -6,7 +6,6 @@ module.exports = (entry) => {
       port: 8080,
       contentBase: path.resolve(entry.root, entry.output),
       index: entry.filename.replace(/\.[^.]+$/, '.html'),
-      watchContentBase: true,
       historyApiFallback: true,
       compress: true,
       hot: true

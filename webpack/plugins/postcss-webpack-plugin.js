@@ -62,7 +62,7 @@ module.exports = (entry) => {
               from: dependency,
               to: dependency,
               map: {
-                inline: false,
+                inline: false, // todo: in development mode this should be inlined
                 prev: compilation.assets[dependency].map()
               }
             })
