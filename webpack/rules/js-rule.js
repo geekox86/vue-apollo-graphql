@@ -13,7 +13,9 @@ module.exports = (entry) => {
     return {
       test: /\.js$/,
       use: loaders,
-      exclude: /node_modules/
+      exclude: !entry.transpileExternals || !entry.transpileExternals.length ?
+        /node_modules/ :
+        new RegExp(`node_modules/(?!(${ entry.transpileExternals.join('|') })/).*`)
     }
   }
 }

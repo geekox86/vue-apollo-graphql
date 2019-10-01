@@ -4,7 +4,7 @@ const root = __dirname
 const input = 'codes'
 const output = 'builds'
 const assets = {
-  data: /\.json$/,
+  // data: /\.json$/,
   fonts: /\.(eot|otf|ttf|woff|woff2|svg)$/,
   images: /\.(gif|jpg|jpeg|png)$/,
   audio: /\.(aac|m4a|mp3|oga|wav|webm)$/,
@@ -14,9 +14,14 @@ const entries = [
   {
     filename: 'client.ts',
     target: 'web',
-    engines: 'last 1 versions',
+    engines: 'ie 11, chrome 72',
     modules: false,
     externals: false,
+    transpileExternals: [
+      'resize-detector',
+      'vue-echarts',
+      'vuetify'
+    ],
     // node: {},
     html: 'template.html',
     babel: true,
@@ -28,8 +33,8 @@ const entries = [
     sass: true,
     less: false,
     stylus: false,
-    extractCss: 'entry', // 'chunk', // 'entry',
-    minify: true,
+    extractCss: 'chunk', // 'chunk', // 'entry',
+    minify: false,
     hash: true,
     cache: false,
     // optimization: {},
@@ -37,7 +42,7 @@ const entries = [
     // stats: {},
     dev: 'server', // 'watch',
     // watchOptions: {},
-    miscOptions: { profile: true }
+    // miscOptions: { profile: true }
   }
 ]
 

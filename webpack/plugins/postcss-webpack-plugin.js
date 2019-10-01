@@ -30,11 +30,13 @@ module.exports = (entry) => {
       }
     }
 
+    // todo: add tailwindcss option to webpack configuration and adjust apply function accordingly
     const tailwindcssPlugin = () => {
       return require('tailwindcss')
     }
 
     class PostcssWebpackPlugin {
+      // todo: enhance to enable processing without css extraction
       apply(compiler) {
         compiler.hooks.emit.tapPromise('PurgecssWebpackPlugin', async (compilation) => {
           const dependants = []
@@ -62,7 +64,7 @@ module.exports = (entry) => {
               from: dependency,
               to: dependency,
               map: {
-                inline: false, // todo: in development mode this should be inlined
+                inline: false, // todo: check if this should be inlined in development mode
                 prev: compilation.assets[dependency].map()
               }
             })

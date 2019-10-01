@@ -13,7 +13,9 @@ module.exports = (entry) => {
         babelLoader(entry),
         tsLoader(entry)
       ].filter((loader) => loader),
-      exclude: /node_modules/
+      exclude: !entry.transpileExternals || !entry.transpileExternals.length ?
+        /node_modules/ :
+        new RegExp(`node_modules/(?!(${ entry.transpileExternals.join('|') })/).*`)
     }
   }
 }

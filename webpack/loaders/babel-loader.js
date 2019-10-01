@@ -14,13 +14,11 @@ module.exports = (entry) => {
       }
     }
 
-    const babelProposalsPreset = (entry) => {
-      if (entry.mode == 'production') {
-        return [
-          'babel-preset-proposals',
-          { all: true }
-        ]
-      }
+    const babelProposalsPreset = () => {
+      return [
+        'babel-preset-proposals',
+        { all: true }
+      ]
     }
 
     const babelRootImportPlugin = (entry) => {
@@ -32,18 +30,13 @@ module.exports = (entry) => {
       }
     }
 
-    const babelSyntaxDynamicImportPlugin = () => {
-      return '@babel/plugin-syntax-dynamic-import'
-    }
-
     const presets = [
       babelEnvPreset(entry),
       babelProposalsPreset(entry)
     ].filter((preset) => preset)
 
     const plugins = [
-      babelRootImportPlugin(entry),
-      babelSyntaxDynamicImportPlugin(entry)
+      babelRootImportPlugin(entry)
     ].filter((plugin) => plugin)
 
     return {
