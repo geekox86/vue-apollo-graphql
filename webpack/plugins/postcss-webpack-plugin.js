@@ -30,9 +30,10 @@ module.exports = (entry) => {
       }
     }
 
-    // todo: add tailwindcss option to webpack configuration and adjust apply function accordingly
-    const tailwindcssPlugin = () => {
-      return require('tailwindcss')
+    const tailwindcssPlugin = (entry) => {
+      if (entry.tailwindcss) {
+        return require('tailwindcss')
+      }
     }
 
     class PostcssWebpackPlugin {

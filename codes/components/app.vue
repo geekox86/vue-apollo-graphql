@@ -10,11 +10,15 @@
 
       <v-col cols="8">
         <v-row justify="center" no-gutters>
-          <v-chip link>
-            <v-icon class="mr-3" color="grey darken-3" small>fa-sitemap</v-icon>
-            <strong>Operational Excellence Department (30003300)</strong>
-            <span class="ml-1">– Corporate Assessment (August 2019)</span>
-          </v-chip>
+          <AssessmentSelection>
+            <template v-slot:default="{ on }">
+              <v-chip link v-on="on">
+                <v-icon class="mr-3" color="grey darken-3" small>fa-sitemap</v-icon>
+                <strong>Operational Excellence Department (30003300)</strong>
+                <span class="ml-1">– Corporate Assessment (August 2019)</span>
+              </v-chip>
+            </template>
+          </AssessmentSelection>
         </v-row>
       </v-col>
 
@@ -37,14 +41,24 @@
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-btn class="ml-2" icon @click="showAssessmentViewer = !showAssessmentViewer">
-            <v-icon color="grey darken-3">fas fa-cogs</v-icon>
-          </v-btn>
+
+<!--          <v-tooltip bottom>-->
+<!--            <template v-slot:activator="{ on }">-->
+<!--              <v-btn class="ml-2" icon v-on="on" @click="showAssessmentViewer = !showAssessmentViewer">-->
+<!--                <v-icon color="grey darken-3">fas fa-cogs</v-icon>-->
+<!--              </v-btn>-->
+<!--            </template>-->
+
+<!--            <span>Edit configuration</span>-->
+<!--          </v-tooltip>-->
         </v-row>
       </v-col>
     </v-app-bar>
 
-    <v-content style="height: 100vh;">
+    <AssessmentComponents></AssessmentComponents>
+    <AssessmentMembers></AssessmentMembers>
+
+    <v-content>
       <AssessmentViewer v-if="showAssessmentViewer"></AssessmentViewer>
       <Configuration v-else></Configuration>
     </v-content>
@@ -52,7 +66,7 @@
     <v-footer app>
       <v-row justify="center">
         <v-icon class="mr-2" color="grey darken-3" x-small>far fa-copyright</v-icon>
-        <span class="overline">Operational Excellence Department – Developed by Mohannad Al-Awad</span>
+        <span class="overline">Operational Excellence Department</span>
       </v-row>
     </v-footer>
   </v-app>
@@ -61,12 +75,19 @@
 <script lang="ts">
   import Vue from 'vue'
 
+  import AssessmentSelection from '@/codes/components/assessment-selection.vue'
   import AssessmentViewer from '@/codes/components/assessment-viewer.vue'
   import Configuration from '@/codes/components/configuration.vue'
 
   export default Vue.component('App', {
-    components: { AssessmentViewer, Configuration },
-    data: () => ({ showAssessmentViewer: true })
+    components: {
+      AssessmentSelection,
+      AssessmentViewer,
+      Configuration
+    },
+    data: () => ({
+      showAssessmentViewer: true
+    })
   })
 </script>
 

@@ -30,6 +30,7 @@ const entries = [
     vuetify: true,
     css: true, // 'globals.css',
     postcss: true,
+    tailwindcss: false,
     sass: true,
     less: false,
     stylus: false,

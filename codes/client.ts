@@ -1,12 +1,12 @@
 import Vue, { CreateElement } from 'vue'
-import Vuetify from 'vuetify/lib'
+
 
 import App from '@/codes/components/app.vue'
+import apollo from '@/codes/plugins/apollo'
+import vuetify from '@/codes/plugins/vuetify'
 
-Vue.use(Vuetify)
-
-const vuetify = new Vuetify({ icons: { iconfont: 'fa' } })
 const vue = new Vue({
+  apolloProvider: apollo,
   vuetify,
   render: (h: CreateElement) => h(App)
 })
